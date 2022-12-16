@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.rssreader.MainController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="104.0" prefHeight="38.0" prefWidth="600.0" text="RSS阅读器" textFill="#2542a1">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Label>
+      <Button layoutX="261.0" layoutY="210.0" mnemonicParsing="false" onAction="#fetchSource" text="查看订阅" textFill="#3d7dae">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="373.0" layoutY="298.0" mnemonicParsing="false" onAction="#addNewRecord" text="添加订阅">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inputText" layoutX="198.0" layoutY="298.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button layoutX="268.0" layoutY="348.0" mnemonicParsing="false" onAction="#toSource" text="查看订阅源" />
+   </children>
+</AnchorPane>
