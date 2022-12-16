@@ -27,7 +27,7 @@ public class DeleteSource {
     public void deleteSource(ActionEvent event)
     {
         try{
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\rss-records.sqlite");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite::resource:rss-records.sqlite");
             Statement statement = connection.createStatement();
             String selectedIndex = rssList.getSelectionModel().getSelectedItem();//获取被选则的源的字符串字段
 
@@ -66,7 +66,7 @@ public class DeleteSource {
     public  void refresh(ActionEvent event)
     {
         try{
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\rss-records.sqlite");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite::resource:rss-records.sqlite");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from rss_records");
             ObservableList<String> sources = FXCollections.observableArrayList();

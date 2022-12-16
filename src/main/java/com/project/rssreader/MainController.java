@@ -43,7 +43,7 @@ public class MainController {
     public ResultSet getData() throws SQLException {
 
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\rss-records.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite::resource:rss-records.sqlite");//需要是相对路径！！
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from rss_records");//获取所有订阅
             return rs;
@@ -168,7 +168,7 @@ public class MainController {
 
         Connection connection=null;
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\rss-records.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite::resource:rss-records.sqlite");
             Statement statement = connection.createStatement();
             statement.executeUpdate("insert into rss_records values('"+record+"')");
             inputText.setText("");
