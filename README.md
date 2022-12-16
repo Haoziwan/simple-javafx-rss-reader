@@ -1,4 +1,4 @@
 # simple-javafx-rss-reader
-#my javafx project for a java learning course, may look messy
+<br>a simple javafx rss reader for rss feed
 <br>using jdom2 to parse rss
-<br>using sqlite to store rss sources
+<br>using SQLite to store rss sources

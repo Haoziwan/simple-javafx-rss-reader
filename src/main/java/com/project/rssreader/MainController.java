@@ -103,7 +103,7 @@ public class MainController {
         root2.setPadding(new Insets(10, 10, 10, 10));
 
         Scene scene = new Scene(root2, 800, 400);
-        scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         //获取原stage
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -117,7 +117,7 @@ public class MainController {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
-            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -146,7 +146,7 @@ public class MainController {
         scrollPane.setContent(webView);
 //        VBox root = new VBox(webView);
         Scene scene = new Scene(scrollPane);
-        scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
         stage= new Stage();
         stage.setResizable(true);

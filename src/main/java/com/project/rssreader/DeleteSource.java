@@ -11,9 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -55,7 +53,7 @@ public class DeleteSource {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
-            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -104,7 +102,7 @@ public class DeleteSource {
 
 
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
             //获取原stage
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
