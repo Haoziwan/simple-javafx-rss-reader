@@ -1,0 +1,29 @@
+.root{
+    -fx-background-color: linear-gradient(rgba(124,195,34,0.4) 0%, rgba(253,187,45,0.2) 100%);
+}
+
+#title {
+    -fx-text-fill: grey;
+    -fx-font-size: 64px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+.button {
+    -fx-font-size: 13px;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(rgba(239, 233, 215, 0.33), #faa404);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button:hover {
+    -fx-background-color: linear-gradient(#faa404, rgba(239, 233, 215, 0.33));
+}
+#getArticle{
+    -fx-font-size: 17px;
+}
+#getSource{
+    -fx-font-size: 17px;
+}
+

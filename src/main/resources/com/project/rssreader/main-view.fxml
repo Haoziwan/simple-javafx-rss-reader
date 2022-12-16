@@ -8,26 +8,29 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.rssreader.MainController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="104.0" prefHeight="38.0" prefWidth="600.0" text="RSS阅读器" textFill="#2542a1">
+      <Label fx:id="title" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefHeight="162.0" prefWidth="600.0" text="RSS阅读器">
          <font>
             <Font size="47.0" />
          </font>
       </Label>
-      <Button layoutX="261.0" layoutY="210.0" mnemonicParsing="false" onAction="#fetchSource" text="查看订阅" textFill="#3d7dae">
+      <Button fx:id="getArticle" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="221.0" mnemonicParsing="false" onAction="#fetchSource" text="查看订阅">
          <font>
             <Font size="17.0" />
          </font>
       </Button>
-      <Button layoutX="373.0" layoutY="298.0" mnemonicParsing="false" onAction="#addNewRecord" text="添加订阅">
+      <Button fx:id="addSource" layoutX="378.0" layoutY="285.0" mnemonicParsing="false" onAction="#addNewRecord" text="添加订阅">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="inputText" layoutX="198.0" layoutY="298.0">
+      <TextField fx:id="inputText" layoutX="164.0" layoutY="285.0" prefHeight="26.0" prefWidth="205.0">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
-      <Button layoutX="268.0" layoutY="348.0" mnemonicParsing="false" onAction="#toSource" text="查看订阅源" />
+      <Button fx:id="getSource" alignment="CENTER" contentDisplay="CENTER" layoutX="305.0" layoutY="221.0" mnemonicParsing="false" onAction="#toSource" text="查看订阅源">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
    </children>
 </AnchorPane>

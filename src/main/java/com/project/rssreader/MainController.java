@@ -3,6 +3,8 @@ package com.project.rssreader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -41,7 +43,7 @@ public class MainController {
     public ResultSet getData() throws SQLException {
 
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:D:\\desktop\\JavaProject\\rssReader\\src\\main\\resources\\rss-records.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\rss-records.sqlite");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from rss_records");//获取所有订阅
             return rs;
@@ -96,8 +98,12 @@ public class MainController {
         // 把listview加在vbox中
         VBox root2 = new VBox();
         root2.getChildren().addAll(listView,backBtn);
+        root2.setAlignment(Pos.CENTER);
+        root2.setSpacing(5);
+        root2.setPadding(new Insets(10, 10, 10, 10));
 
         Scene scene = new Scene(root2, 800, 400);
+        scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
         //获取原stage
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -111,6 +117,7 @@ public class MainController {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
+            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -139,6 +146,7 @@ public class MainController {
         scrollPane.setContent(webView);
 //        VBox root = new VBox(webView);
         Scene scene = new Scene(scrollPane);
+        scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
 
         stage= new Stage();
         stage.setResizable(true);

@@ -4,11 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -51,6 +55,7 @@ public class DeleteSource {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
+            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -87,12 +92,19 @@ public class DeleteSource {
             });
 
 
-            VBox root = new VBox();
-            root.getChildren().addAll(rssList,deleteBtn,backBtn);
+            GridPane root = new GridPane();
+            root.add(rssList,0,0,2,1);
+            root.add(backBtn,1,1);
+            root.add(deleteBtn,0,1);
+            root.setPadding(new Insets(10, 10, 10, 10));
+            root.setVgap(10);
+            root.setHgap(105);
+            root.setAlignment(Pos.CENTER);
 
 
 
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
             //获取原stage
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
