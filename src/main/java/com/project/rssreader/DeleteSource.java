@@ -31,7 +31,7 @@ public class DeleteSource {
             Statement statement = connection.createStatement();
             String selectedIndex = rssList.getSelectionModel().getSelectedItem();//获取被选则的源的字符串字段
 
-            System.out.println(selectedIndex);
+
             statement.executeUpdate("delete from rss_records where rss='"+selectedIndex+"'");
             connection.close();
             DeleteSource d= new DeleteSource();
